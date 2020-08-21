@@ -1,0 +1,71 @@
+﻿<Window x:Class="GestureWithBT_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestureWithBT_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="385.5" Width="558.65"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
+        Loaded="MainWindow_Loaded"
+        Closing="MainWindow_Closed">
+    <Grid Margin="0,0,-492,0">
+        <Grid Name ="controlPanel" Margin="-450,10,-84,-226">
+            <Label Content="Controller Mode" HorizontalAlignment="Left" Margin="636,38,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Button x:Name="comp_btn" Content="Computer" HorizontalAlignment="Left" Margin="549,95,0,0" VerticalAlignment="Top" Width="75" Click="comp_btn_Click"/>
+            <Button x:Name="mech_btn" Content="Robot Arm" HorizontalAlignment="Left" Margin="795,95,0,0" VerticalAlignment="Top" Width="75" Click="mech_btn_Click"/>
+            
+            <Grid x:Name="bt_conn_panel" Margin="534,163,452,313">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="COM Port:"  Grid.Row="0" Grid.Column="0"/>
+                <Label Content="Baud Rate:"  Grid.Row="1" Grid.Column="0"/>
+                <ComboBox x:Name="com_port_combo" Grid.Row="0" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="COM1" HorizontalAlignment="Left" Width="92"/>
+                    <ComboBoxItem Content="COM2" HorizontalAlignment="Left" Width="92"/>
+                    <ComboBoxItem Content="COM3" HorizontalAlignment="Left" Width="92"/>
+                    <ComboBoxItem Content="COM4" HorizontalAlignment="Left" Width="92"/>
+                    <ComboBoxItem Content="COM5" HorizontalAlignment="Left" Width="92"/>
+                    <ComboBoxItem Content="COM6" HorizontalAlignment="Left" Width="92"/>
+                    <ComboBoxItem Content="COM7" HorizontalAlignment="Left" Width="92"/>
+                    <ComboBoxItem Content="COM8" HorizontalAlignment="Left" Width="92"/>
+                </ComboBox>
+                <ComboBox x:Name="baud_rate_combo" Grid.Row="1" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="9600" HorizontalAlignment="Left" Width="92"/>
+                    <ComboBoxItem Content="14400" HorizontalAlignment="Left" Width="92"/>
+                    <ComboBoxItem Content="28800" HorizontalAlignment="Left" Width="92"/>
+                    <ComboBoxItem Content="38400" HorizontalAlignment="Left" Width="92"/>
+                </ComboBox>
+                <Button x:Name="bt_conn_btn" Grid.Row="0" Grid.Column="2" Margin="5" Click="bt_conn_btn_Click">Connect</Button>
+                <Button x:Name="bt_disc_btn" Grid.Row="1" Grid.Column="2" Margin="5" IsEnabled ="False" Click="bt_disc_btn_Click">Disonnect</Button>
+                <Label x:Name="conn_label" Grid.Row="3"/>
+            </Grid>
+        </Grid>
+
+        <Grid Name="drawPanel" Margin="10,10,10,112" Grid.RowSpan="2">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="500"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="683"/>
+                <ColumnDefinition Width="683"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="{Binding ColorImageSource}" Stretch="UniformToFill" Grid.Row="0" Grid.Column="0"/>
+            <Image Source="{Binding BodyImageSource}" Stretch="UniformToFill" Grid.Row="0" Grid.Column="1" />
+        </Grid>
+
+        <Button x:Name="stop_btn" Content="Stop" HorizontalAlignment="Left" Margin="701,546,0,0" VerticalAlignment="Top" Width="74" Click="stop_btn_Click" RenderTransformOrigin="0.5,-0.375" Height="21"/>
+    </Grid>
+</Window>
