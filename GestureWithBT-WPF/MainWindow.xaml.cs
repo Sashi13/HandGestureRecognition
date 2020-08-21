@@ -35,7 +35,7 @@ namespace GestureWithBT_WPF
             RIGHTDOWN = 0x00000008,
             RIGHTUP = 0x00000010
         }
-        private const double HandSize = 30;
+        private const double HandSize = 25;
         private const double JointThickness = 2;
         private const float InferredZPositionClamp = 0.1f;
         private readonly Brush handClosedBrush = new SolidColorBrush(Color.FromArgb(128, 255, 0, 0));
