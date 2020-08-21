@@ -1,4 +1,4 @@
-# GestureWithBT
+# Hand gesture recognition with Kinect V2
 
 # Description
 
