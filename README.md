@@ -6,7 +6,7 @@ The whole program developed in WPF. This program able to detect hand gestures fr
 4 DOF robotic arm. This application can be modified to control other devices as well.
 
 # Hardware
-Kinect V2
-Computer device with Windows OS with Bluetooth
+Kinect V2, 
+Windows OS device with Bluetooth
 
 4 DOF Robotic Arm with Bluetooth
